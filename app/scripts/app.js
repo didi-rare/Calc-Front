@@ -1,14 +1,35 @@
 'use strict';
 
-// Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+//declare a model
+var calcModel = {
+    currentNumber: 0,
+    currentDisplay: "",
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+    reset: function () {
+        this.currentNumber = "0";
+        this.currentDisplay = "";
+    }
+};
+
+
+// Declare app level module which depends on views, and components
+angular.module('CalcApp', ['calcModule']);
+var calcModule = angular.module('calcModule', []);
+
+
+calcModule.controller('calcController', ['$scope', function ($scope) {
+    $scope.calculator = calcModel;
+    $scope.numBtnClicked = function (clickedNumber) {
+        if (calcModel.currentNumber === "0"){
+            calcModel.currentNumber = "";
+            calcModel.currentDisplay = "";
+        }
+
+        calcModel.currentNumber += clickedNumber;
+        calcModel.currentDisplay += clickedNumber;
+    };
+
+    $scope.resetClicked = function () {
+        calcModel.reset();
+    }
 }]);

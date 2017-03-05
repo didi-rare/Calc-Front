@@ -9,47 +9,50 @@
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
     <link rel="stylesheet" href="styles/app.css">
-    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-    <script src="https://use.fontawesome.com/75dc7ed32d.js"></script>
+    <!--<script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://use.fontawesome.com/75dc7ed32d.js"></script>-->
 </head>
-<body>
+<body  ng-app="CalcApp">
     <h1> Calculator </h1>
-    <div class="list">
+    <div class="list" ng-controller="calcController">
         <div class="item">
 
 
             <!-- box to display the answers -->
-            <div class="display"> <input type="text" readonly size="20"/></div>
+            <div class="display">
+                <p class="display-output">
+
+                    {{ calculator.currentDisplay }}
+
+                </p>
+            </div>
 
             <!-- container to hold all buttons -->
             <div class="keys">
                 <ul>
-                    <li><input type="button" value="7"/></li>
-                    <li><input type="button" value="8"></li>
-                    <li><input type="button" value="9"/></li>
-                    <button><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    <li><input type="button" value="7" ng-click="numBtnClicked(7)"/></li>
+                    <li><input type="button" value="8" ng-click="numBtnClicked(8)"></li>
+                    <li><input type="button" value="9" ng-click="numBtnClicked(9)"/></li>
+                    <button><b>+</b></button>
                 </ul>
                 <ul>
-                    <li><input type="button" value="4"/></li>
-                    <li><input type="button" value="5"/></li>
-                    <li><input type="button" value="6"/></li>
-                    <button><i class="fa fa-minus" aria-hidden="true"></i></button>
+                    <li><input type="button" value="4" ng-click="numBtnClicked(4)"/></li>
+                    <li><input type="button" value="5" ng-click="numBtnClicked(5)"/></li>
+                    <li><input type="button" value="6" ng-click="numBtnClicked(6)"/></li>
+                    <button><b>-</b></button>
                 </ul>
                 <ul>
-                    <li><input type="button" value="1"/></li>
-                    <li><input type="button" value="2"/></li>
-                    <li><input type="button" value="3"/></li>
-                    <button><i class="fa fa-asterisk" aria-hidden="true"></i></button>
+                    <li><input type="button" value="1" ng-click="numBtnClicked(1)"/></li>
+                    <li><input type="button" value="2" ng-click="numBtnClicked(2)"/></li>
+                    <li><input type="button" value="3" ng-click="numBtnClicked(3)"/></li>
+                    <button><b>*</b></button>
                 </ul>
                 <ul>
-                    <li><input type="button" value="Clr"/></li>
-                    <li><input type="button" value="."/></li>
-                    <li><input type="button" value="0"/></li>
-                    <button><i class="fa fa-deviantart" aria-hidden="true"></i></button>
+                    <li><input type="button" value="Clr" ng-click="resetClicked()"/></li>
+                    <button class="equals"><b>=</b></button>
+                    <button><b>/</b></button>
                 </ul>
-                <ul>
-                    <button><i class="fa fa-calculator" aria-hidden="true"></i></button>
-                </ul>
+
             </div>
         </div>
     </div>
@@ -59,11 +62,11 @@
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="scripts/app.js"></script>
+  <script type="text/javascript" src="components/version/version.js"></script>
+  <script type="text/javascript" src="components/version/version-directive.js"></script>
+  <script type="text/javascript" src="components/version/interpolate-filter.js"></script>
 </body>
 </html>
