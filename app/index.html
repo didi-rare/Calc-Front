@@ -33,24 +33,24 @@
                     <li><input type="button" value="7" ng-click="numBtnClicked(7)"/></li>
                     <li><input type="button" value="8" ng-click="numBtnClicked(8)"></li>
                     <li><input type="button" value="9" ng-click="numBtnClicked(9)"/></li>
-                    <button><b>+</b></button>
+                    <button ng-click="operationButtonClicked('+')"><b>+</b></button>
                 </ul>
                 <ul>
                     <li><input type="button" value="4" ng-click="numBtnClicked(4)"/></li>
                     <li><input type="button" value="5" ng-click="numBtnClicked(5)"/></li>
                     <li><input type="button" value="6" ng-click="numBtnClicked(6)"/></li>
-                    <button><b>-</b></button>
+                    <button ng-click="operationButtonClicked('-')"><b>-</b></button>
                 </ul>
                 <ul>
                     <li><input type="button" value="1" ng-click="numBtnClicked(1)"/></li>
                     <li><input type="button" value="2" ng-click="numBtnClicked(2)"/></li>
                     <li><input type="button" value="3" ng-click="numBtnClicked(3)"/></li>
-                    <button><b>*</b></button>
+                    <button ng-click="operationButtonClicked('*')"><b>*</b></button>
                 </ul>
                 <ul>
                     <li><input type="button" value="Clr" ng-click="resetClicked()"/></li>
                     <button class="equals"><b>=</b></button>
-                    <button><b>/</b></button>
+                    <button ng-click="operationButtonClicked('/')"><b>/</b></button>
                 </ul>
 
             </div>
